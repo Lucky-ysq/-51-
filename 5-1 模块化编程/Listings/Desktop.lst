@@ -1,0 +1,46 @@
+C51 COMPILER V9.60.7.0   DESKTOP                                                           10/21/2026 19:00:25 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE DESKTOP
+OBJECT MODULE PLACED IN .\Objects\Desktop.obj
+COMPILER INVOKED BY: F:\keil5C51\C51\BIN\C51.EXE Desktop.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\
+                    -Desktop.lst) TABS(2) OBJECT(.\Objects\Desktop.obj)
+
+line level    source
+
+   1          #include <REGX52.H>
+   2          #include "Delay.h"
+   3          
+   4          
+   5          unsigned char NumberValue[] = {0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F};
+   6          
+   7          void Desktop(unsigned char Index,unsigned char Number){
+   8   1              switch(Index){
+   9   2                  // 1~8对应P2.2~P2.4的三位二进制数  P2_2为1 P2_3为2 P2_4为4
+  10   2                  case 1: P2_2=1;P2_3=1;P2_4=1;break; // 7 
+  11   2                  case 2: P2_2=0;P2_3=1;P2_4=1;break; // 6
+  12   2                  case 3: P2_2=1;P2_3=0;P2_4=1;break; // 5
+  13   2                  case 4: P2_2=0;P2_3=0;P2_4=1;break; // 4
+  14   2                  case 5: P2_2=1;P2_3=1;P2_4=0;break; // 3
+  15   2                  case 6: P2_2=0;P2_3=1;P2_4=0;break; // 2
+  16   2                  case 7: P2_2=1;P2_3=0;P2_4=0;break; // 1
+  17   2                  case 8: P2_2=0;P2_3=0;P2_4=0;break; // 0
+  18   2              }
+  19   1              P0=NumberValue[Number];
+  20   1          Delay(1);
+  21   1          P0=0x00; // 关闭数码管
+  22   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    109    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     10    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

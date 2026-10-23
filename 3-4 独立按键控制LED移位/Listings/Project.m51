@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    10/16/2026  19:33:20  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    10/19/2026  17:50:15  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
@@ -25,9 +25,9 @@ LINK MAP OF MODULE:  .\Objects\Project (MAIN)
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
-            CODE    0003H     0032H     UNIT         ?PR?MAIN?MAIN
-            CODE    0035H     0015H     UNIT         ?PR?_DELAY?MAIN
-            CODE    004AH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0003H     004DH     UNIT         ?PR?MAIN?MAIN
+            CODE    0050H     0019H     UNIT         ?PR?_DELAY?MAIN
+            CODE    0069H     000CH     UNIT         ?C_C51STARTUP
 
 
 
@@ -53,29 +53,34 @@ SYMBOL TABLE OF MODULE:  .\Objects\Project (MAIN)
   -------         MODULE        MAIN
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:00A0H         PUBLIC        P2
+  B:00B0H.0       PUBLIC        P3_0
   B:00B0H.1       PUBLIC        P3_1
   C:0003H         PUBLIC        main
-  C:0035H         PUBLIC        _Delay
+  C:0054H         PUBLIC        _Delay
+  C:0050H         SYMBOL        L?0026
+  -------         PROC          L?0025
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  10/19/2026  17:50:15  PAGE 2
+
+
+  -------         ENDPROC       L?0025
+  C:0050H         SYMBOL        L?0026
   -------         PROC          _DELAY
   D:0006H         SYMBOL        ms
   -------         DO            
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  10/16/2026  19:33:20  PAGE 2
-
-
   D:0005H         SYMBOL        i
   D:0004H         SYMBOL        j
   -------         ENDDO         
-  C:0035H         LINE#         3
-  C:0035H         LINE#         4
-  C:0035H         LINE#         6
-  C:003FH         LINE#         7
-  C:003FH         LINE#         8
-  C:0041H         LINE#         9
-  C:0043H         LINE#         11
-  C:0043H         LINE#         12
-  C:0045H         LINE#         14
-  C:0047H         LINE#         15
-  C:0049H         LINE#         16
+  C:0054H         LINE#         3
+  C:0054H         LINE#         4
+  C:0054H         LINE#         6
+  C:005EH         LINE#         7
+  C:005EH         LINE#         8
+  C:0060H         LINE#         9
+  C:0062H         LINE#         11
+  C:0062H         LINE#         12
+  C:0064H         LINE#         14
+  C:0066H         LINE#         15
+  C:0068H         LINE#         16
   -------         ENDPROC       _DELAY
   -------         PROC          MAIN
   -------         DO            
@@ -90,16 +95,26 @@ SYMBOL TABLE OF MODULE:  .\Objects\Project (MAIN)
   C:0008H         LINE#         24
   C:000BH         LINE#         25
   C:000BH         LINE#         26
-  C:0012H         LINE#         27
-  C:0015H         LINE#         29
-  C:001CH         LINE#         30
-  C:001DH         LINE#         31
-  C:0023H         LINE#         32
-  C:0025H         LINE#         33
-  C:0033H         LINE#         34
-  C:0033H         LINE#         35
+  C:000EH         LINE#         27
+  C:0011H         LINE#         29
+  C:0014H         LINE#         30
+  C:0015H         LINE#         31
+  C:001BH         LINE#         32
+  C:001DH         LINE#         33
+  C:002BH         LINE#         34
+  C:002BH         LINE#         35
+  C:002EH         LINE#         36
+  C:002EH         LINE#         37
+  C:0031H         LINE#         38
+  C:0034H         LINE#         39
+  C:0037H         LINE#         40
+  C:003DH         LINE#         41
+  C:003FH         LINE#         42
+  C:0040H         LINE#         43
+  C:004EH         LINE#         44
+  C:004EH         LINE#         45
   -------         ENDPROC       MAIN
   -------         ENDMOD        MAIN
 
-Program Size: data=9.0 xdata=0 code=86
+Program Size: data=9.0 xdata=0 code=117
 LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
