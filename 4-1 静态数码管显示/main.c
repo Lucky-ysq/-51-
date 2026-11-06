@@ -14,7 +14,7 @@ void Desktop(unsigned char Index,unsigned char Number){
             case 6: P2_2=0;P2_3=1;P2_4=0;break; // 2
             case 7: P2_2=1;P2_3=0;P2_4=0;break; // 1
             case 8: P2_2=0;P2_3=0;P2_4=0;break; // 0
-        }z
+        }
         P0=NumberValue[Number];
 }
 

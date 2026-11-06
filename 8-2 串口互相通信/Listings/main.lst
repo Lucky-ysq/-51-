@@ -1,0 +1,43 @@
+C51 COMPILER V9.60.7.0   MAIN                                                              11/02/2026 11:11:34 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: F:\keil5C51\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\mai
+                    -n.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <REGX52.H>
+   2          #include "UART.h"
+   3          
+   4          
+   5          void main(){
+   6   1          UartInit();
+   7   1          while(1){
+   8   2          }
+   9   1      }
+  10          
+  11          
+  12          void UART_Routine() interrupt 4{
+  13   1          // 接收信息判断
+  14   1          if(RI == 1){
+  15   2              P2 = ~SBUF; // 将接收到的数据发送到P2口
+  16   2              UartSend(SBUF); // 将接收到的数据发送回去
+  17   2              RI = 0;
+  18   2          }
+  19   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     76    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
