@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    11/02/2026  19:01:42  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    11/18/2026  20:27:14  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
@@ -26,8 +26,9 @@ LINK MAP OF MODULE:  .\Objects\Project (MAIN)
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
             CODE    0003H     002DH     UNIT         ?PR?__74HC595_WRITEBYTE?MAIN
-            CODE    0030H     000EH     UNIT         ?PR?MAIN?MAIN
-            CODE    003EH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0030H     001AH     UNIT         ?PR?_SHOWCARTOON?MAIN
+            CODE    004AH     000DH     UNIT         ?PR?MAIN?MAIN
+            CODE    0057H     000CH     UNIT         ?C_C51STARTUP
 
 
 
@@ -41,6 +42,9 @@ SEGMENT
   +--> ?PR?MAIN?MAIN
 
 ?PR?MAIN?MAIN
+  +--> ?PR?_SHOWCARTOON?MAIN
+
+?PR?_SHOWCARTOON?MAIN
   +--> ?PR?__74HC595_WRITEBYTE?MAIN
 
 
@@ -52,41 +56,49 @@ SYMBOL TABLE OF MODULE:  .\Objects\Project (MAIN)
 
   -------         MODULE        MAIN
   C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0030H         PUBLIC        _ShowCartoon
   D:0080H         PUBLIC        P0
   C:0003H         PUBLIC        __74HC595_WriteByte
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  11/18/2026  20:27:14  PAGE 2
+
+
   D:00B0H         PUBLIC        P3
-  C:0030H         PUBLIC        main
+  C:004AH         PUBLIC        main
   B:00B0H.5       PUBLIC        RCK
   B:00B0H.6       PUBLIC        SCK
   B:00B0H.4       PUBLIC        SER
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  11/02/2026  19:01:42  PAGE 2
-
-
   -------         PROC          __74HC595_WRITEBYTE
   D:0005H         SYMBOL        Byte
   -------         DO            
   D:0003H         SYMBOL        i
   -------         ENDDO         
-  C:0003H         LINE#         6
-  C:0005H         LINE#         8
-  C:0007H         LINE#         9
-  C:0023H         LINE#         10
-  C:0025H         LINE#         11
-  C:0027H         LINE#         12
-  C:002BH         LINE#         13
-  C:002DH         LINE#         14
-  C:002FH         LINE#         15
+  C:0003H         LINE#         7
+  C:0005H         LINE#         9
+  C:0007H         LINE#         10
+  C:0023H         LINE#         11
+  C:0025H         LINE#         12
+  C:0027H         LINE#         13
+  C:002BH         LINE#         14
+  C:002DH         LINE#         15
+  C:002FH         LINE#         16
   -------         ENDPROC       __74HC595_WRITEBYTE
-  -------         PROC          MAIN
-  C:0030H         LINE#         18
+  -------         PROC          _SHOWCARTOON
+  D:0004H         SYMBOL        Column
+  D:0006H         SYMBOL        Data
   C:0030H         LINE#         19
-  C:0032H         LINE#         20
-  C:0034H         LINE#         21
-  C:0039H         LINE#         23
-  C:0039H         LINE#         24
-  C:003CH         LINE#         25
+  C:0034H         LINE#         20
+  C:0039H         LINE#         21
+  C:0049H         LINE#         22
+  -------         ENDPROC       _SHOWCARTOON
+  -------         PROC          MAIN
+  C:004AH         LINE#         25
+  C:004AH         LINE#         26
+  C:004CH         LINE#         27
+  C:004EH         LINE#         28
+  C:0055H         LINE#         29
+  C:0055H         LINE#         30
   -------         ENDPROC       MAIN
   -------         ENDMOD        MAIN
 
-Program Size: data=9.0 xdata=0 code=74
+Program Size: data=9.0 xdata=0 code=99
 LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
